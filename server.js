@@ -12,12 +12,14 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-// Add routes, both API and view
-app.use(routes);
+
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
 console.log(process.env.MONGODB_URI);
+
+// Add routes, both API and view
+app.use(routes);
 
 // Start the API server
 app.listen(PORT, function() {
