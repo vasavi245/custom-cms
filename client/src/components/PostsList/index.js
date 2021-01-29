@@ -3,7 +3,7 @@ import { ListItem, List } from "../List";
 import DeleteBtn from "../DeleteBtn";
 import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
-import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../../utils/actions";
+import { REMOVE_POST, UPDATE_POSTS } from "../../utils/actions";
 import API from "../../utils/API";
 
 function PostsList() {
@@ -21,7 +21,7 @@ function PostsList() {
   };
 
   const getPosts = () => {
-    dispatch({ type: LOADING });
+   
     API.getPosts()
       .then(results => {
         dispatch({
