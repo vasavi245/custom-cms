@@ -11,7 +11,6 @@ function CreatePostForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch({ type: LOADING });
     API.savePost({
       title: titleRef.current.value,
       body: bodyRef.current.value,
